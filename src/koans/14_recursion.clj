@@ -21,6 +21,7 @@
       (recur (rest coll) (cons (first coll) rev)))))
 
 (defn factorial [n]
+
   (loop [n n
          f 1]
     (if (= n 1)
@@ -60,3 +61,34 @@
 
   "But what happens when the machine limits you?"
   (< 1000000000000000000000000N (factorial 100003N)))
+
+;(ns fib.core)
+;(defn fib [n ]
+;  (if (< n 2)
+;    n
+;    (+ (fib (dec n)) (fib (- n 2)))))
+
+
+
+;; (fib 5)
+;; (+ (fib 4) (fib 3)
+;; (+ (fib 3) (fib 2) (fib 1) (fib 2) (fib 1)  (fib 1))
+;; (+ (fib (fib 1)) (fib 1) (fib 1))
+
+
+;(defn fast-fib [n]
+;  (loop [n n
+;         [current-fib next-fib] [0 1]]
+;    (if (= n 0)
+;      current-fib
+;      (recur (dec n) [next-fib (+ current-fib next-fib)]))))
+
+; 0 1 2 3 4 5 6  7
+; 0 1 1 2 3 5 8 13
+
+;; (fib 5)
+;; (+ acuum (fib 4))
+;; (+ accum (fib 3))
+;; (+ accum (fib 2))
+;; (+ accum (fib 1))
+;; (+ accum (fib 0))
